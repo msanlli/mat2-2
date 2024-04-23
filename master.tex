@@ -29,6 +29,7 @@
 \setcounter{prob}{0}
 
 \section{Introduction to Differential Equations}
+\setcounter{equation}{0}
 
 A differential equation (DE) is an equation containing one or more dependent variable derivatives, like \textit{Newton's Law}
 $$
@@ -49,8 +50,11 @@ An ODE can be solved with a general ($=\dots+C$) or particular ($=\dots+k,\,k=\m
 \vspace{1ex}\note{Frontier problems are an IVP but verifying an IC relative to the contour, a Contour Condition (CC)}\vspace{1ex}
 
 \section{First Order Differential Equations}
+\setcounter{equation}{0}
 
 \subsection{Separable DE}
+\setcounter{equation}{0}
+
 A first-order ODE $F(t,y,y')$ is \textit{separable} if it can be written as
 $$
 A(t)dt=B(y)dy,\hspace{4ex}y'=\frac{A(t)}{B(y)},\hspace{4ex}y'=C(t)D(y)
@@ -92,6 +96,7 @@ $$
 
 
 \subsection{Homogeneous ODE}
+\setcounter{equation}{0}
 
 \vspace{1ex}\note{A function $f(x,y)$ is said to be of order $n$ if $f(\lambda x,\lambda y)=\lambda^nf(x,y)$}\vspace{1ex}
 
@@ -185,6 +190,7 @@ $$
 \stepcounter{prob}\vspace{2ex}\textit{\textbf{Prob.\thesection.\theprob:}} Solve the above equation
 
 \subsection{Exact DEs}
+\setcounter{equation}{0}
 An $M(t,y)dt+N(t,y)dy=0$ DOE is \textit{exact} if its \textit{potential function} $F(t,y)$ exists as
 $$
 \frac{\partial F}{\partial t}=M(t,y),\hspace{4ex} \frac{\partial F}{\partial y}=N(t,y)
@@ -243,10 +249,14 @@ F(y,t)=3ty+4y^{2}+2t+C=K'
 $$
 \boxed{K=3ty+4y^{2}+2t}
 $$
+
 \subsection{Integral Factor}
+\setcounter{equation}{0}
 \textbf{\textit{Read Integral Factor (point 5)}}
 
 \subsection{Lineal Equations}
+\setcounter{equation}{0}
+
 A Lineal Equation (LE) is defined by a DE expressible as $y'+p(t)y=q(t)$. To solve a Lineal Ordinal Differential Equation (LODE), it is multiplied by $\mu=e^{ \int p(t) \, dt\, }$  and try to get the derivative of a product with $\mu'$ in function of $\mu$ on the other side, like so
 $$
 \mu'=D_{t}\mu=e^{ \int p(t) \, dt\,  }p(t)=\mu p
@@ -325,7 +335,10 @@ y(x)&=\mu^{-1}\sin x+C
 $$
 \boxed{y(x)=x(\sin x+C)}
 $$
+
 \subsection{Curve Family}
+\setcounter{equation}{0}
+
 An expression $F(x,y,K)=0,\,K\in\mathbb{Z}$ defines a Curve Family.
 
 \subsubsection{Orthogonal Trajectory}
