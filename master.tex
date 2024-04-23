@@ -178,4 +178,177 @@ $$
 $$
 Prob.: Solve the above equation
 
+\subsection{Exact DEs}
+An $M(t,y)dt+N(t,y)dy=0$ DOE is \textit{exact} if its \textit{potential function} $F(t,y)$ exists as
+$$
+\frac{\partial F}{\partial t}=M(t,y),\hspace{4ex} \frac{\partial F}{\partial y}=N(t,y)
+$$
+for an \textit{exact DOE} 
+$$
+F(t,y)=\text{const}
+$$
+
+To prove this on any equation of this style
+$$
+\frac{\partial M}{\partial y}=\frac{\partial N}{\partial t}
+$$
+\textbf{\textit{Ex.: }}Solve $(2ty+3t^{2}y^{2}+1)dt+(t^{2}+2t^{3}y+2y)dy=0$ 
+$\triangleright$ Define $M(y,t)=2ty+3t^{2}y^{2}+1$ and $N(y,t)=t^{2}+2t^{3}+2y$ and observe
+$$
+\partial_{t}F=2t+6t^{2}y=\partial_{y}N\hspace{4ex}\leftarrow\text{Exact DOE}
+$$
+$\triangleright$ Find $F(y,t)$
+\begin{align}
+\text{Exact DOE}\implies \partial _{t}F&=M(y,t)=2ty+3t^{2}y^{2}+1 \\
+\partial_{y}F&=N(y,t)=t^{2}+2t^{3}y+2y
+\end{align}
+$\triangleright$ Integrate
+\begin{align}
+F(y,t)=\int (2ty+3t^{2}y^{2}+1) \, dt\, =yt^{2}+t^{3}y^{2}+t+g(y)
+\end{align}
+$\triangleright$ Determine $g(y)$
+\begin{align}
+\partial_{y}F=t^{2}+2t^{3}y+\frac{dg}{dy}&=N(y,t)=t^{2}+2t^{3}y+2y \\
+\frac{dg}{dy}&=2y \\
+g(y)&=y^{2}+C \\
+\end{align}
+$\triangleright$ Solve with $g(y)$
+\begin{align}
+F(y,t)=yt^{2}+t^{3}y^{2}+t+y^{2}+C=K'
+\end{align}
+$$
+\boxed{K=yt^{2}+t^{3}y^{2}+t+y^{2}}
+$$
+\textbf{\textit{Prob.: }}Solve (using $N$) $(3y+2)dt+(8t+8y)dy=0$
+$\triangleright$ $M(y,t)$ and $N(y,t)$ already defined, find $F(y,t)$ 
+\begin{align}
+\text{Exact DOE}\implies \partial_{y}F(y,t)&=N(y,t) \\
+F(y,t)&=\int (3t+8y) \, dy\, =3ty+4y^{2}+g(t)
+\end{align}
+$\triangleright$ Determine $g(t)$
+\begin{align}
+\partial_{t}F(y,t)=3y+&0+\frac{dg}{dt}=3y+2 \\
+g(t)&=2t+C
+\end{align}
+$\triangleright$ Solve with $g(t)$ 
+\begin{align}
+F(y,t)=3ty+4y^{2}+2t+C=K'
+\end{align}
+$$
+\boxed{K=3ty+4y^{2}+2t}
+$$
+\subsection{Integral Factor}
+\textbf{\textit{Read Integral Factor (point 5)}}
+
+\subsection{Lineal Equations}
+A Lineal Equation (LE) is defined by a DE expressible as $y'+p(t)y=q(t)$. To solve a Lineal Ordinal Differential Equation (LODE), it is multiplied by $\mu=e^{ \int p(t) \, dt\, }$  and try to get the derivative of a product with $\mu'$ in function of $\mu$ on the other side, like so
+$$
+\mu'=D_{t}\mu=e^{ \int p(t) \, dt\,  }p(t)=\mu p
+$$
+\begin{align}
+\mu y'+\mu py=\mu p\implies \mu y'+\mu'y=\mu q\implies(\mu y)'=\mu q
+\end{align}
+then the expression can be integrated
+\begin{align}
+\mu y=\int \mu q \, dt\, \implies
+\end{align}
+$$
+\boxed{y=\frac{1}{\mu}\int \mu q \, dt\, }
+$$
+\note{$\mu$ is a function of $t$ and can not be moved in or out of the integral}
+
+\textbf{\textit{Ex.: }}Solve $y'+2y=e^{t}$
+$\triangleright$ Determine linearity and define $p(t)$ and $q(t)$
+$$
+\text{Linear}\implies p(t)=2,\hspace{4ex}q(t)=e^{ t }
+$$
+$\triangleright$ Find $\mu=e^{ \int p(t) \, dt\, }$
+\begin{align}
+\int p(t) \, dt\, =\int 2 \, dt\, =2t\implies \mu=e^{ 2t }
+\end{align}
+$\triangleright$ $\mu'$ in function of $\mu$
+\begin{align}
+\mu'=2\mu
+\end{align}
+$\triangleright$ Multiply by $\mu$ and obtain the derivative on the other side
+\begin{align}
+\mu y'+\mu 2y=\mu e^{ t }\implies(\mu y)'=\mu e^{ t }
+\end{align}
+$\triangleright$ Solve by obtaining $y$
+\begin{align}
+\mu y=\int \mu e^{ t } \, dt\, &=\int e^{ 2t }e^{ t } \, dt\, =\int e^{ 3t } \, dt\, =\frac{e^{ 3t }}{3}+C \\
+y&=\frac{1}{e^{ 2t }}\left( \frac{e^{ 3t }}{3}+C \right)
+\end{align}
+$$
+\boxed{y=\frac{e^{ t }}{3}+C\,e^{ -2t }}
+$$
+
+\textbf{\textit{Prob.: }}Solve $(y+x^{2}\cos x)dx-xdy=0$ 
+$\triangleright$ Define $M(x,y)=y+x^{2}\cos x$ and $N(x,y)=-x$
+$$
+D_{y}M(x,y)=1,\hspace{4ex}D_{x}N(x,y)=-1 \hspace{4ex}\leftarrow\text{Not exact DOE}
+$$
+$\triangleright$ Determine linearity and find $p(x)$ and $q(x)$
+\begin{align}
+(y+x^{2}\cos x)+xy'&=0 \\
+(y+x^{2}\cos x)&=xy' \\
+\left( \frac{y}{x}+x\cos x \right)&=y' \\
+y'-\frac{y}{x}=x\cos x
+\end{align}
+$$
+p(x)=-\frac{1}{x},\hspace{4ex}q(x)=x\cos x
+$$
+$\triangleright$ Find $\mu$
+\begin{align}
+\int p(x) \, dx\, &=\int -\frac{1}{x} \, dx\, =-\log x \\
+\mu&=e^{ -\log x }=\frac{1}{x}
+\end{align}
+$\triangleright$ Express $\mu'$ in function of $\mu$
+\begin{align}
+\mu'=-\frac{\mu}{x}
+\end{align}
+$\triangleright$ Multiply by $\mu$ and find the derivative on the other side
+\begin{align}
+\mu y'+\frac{\mu y}{x}=\mu x\cos x \implies (\mu y)'=\cos x
+\end{align}
+$\triangleright$ Solve by obtaining $y$
+\begin{align}
+\mu y&=\int \cos x \, dx\, =\sin x+C  \\
+y(x)&=\mu^{-1}\sin x+C
+\end{align}
+$$
+\boxed{y(x)=x(\sin x+C)}
+$$
+\subsection{Curve Family}
+An expression $F(x,y,K)=0,\,K\in\mathbb{Z}$ defines a Curve Family.
+
+\subsubsection{Orthogonal Trajectory}
+A curve from a Curve Family with an orthogonal intersection with each of the other curves.
+
+
+
+\textbf{\textit{Ex.: }}Circumference contour
+$$
+x^{2}+y^{2}=R^{2}
+$$
+\begin{align}
+x^{2}+y^{2}+R^{2}&=0 \\
+F(x,y,K)&=0 \\
+D_{x}F(x,y,K)&=2x+2yy'
+\end{align}
+$$
+\boxed{x+yy'=0}
+$$
+\note{The orthogonal family follows $y'=\frac{y}{x}$}
+
+\begin{align}
+y'=\frac{y}{x}&=\int \frac{1}{y} \, dy\, =\int \frac{1}{x} \, dx\,  \\
+\ln y&=\ln x+C \\
+e^{ \ln y }&=e^{ \ln x+C }
+\end{align}
+$$
+\boxed{y=xe^{ C }}\hspace{4ex}\leftarrow\text{y=Kx}
+$$
+
+
 \end{document}
