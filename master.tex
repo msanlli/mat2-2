@@ -36,11 +36,11 @@ $$
 \nabla u\equiv\nabla^{2}u=\frac{\partial^{2}u(\mathbf{x}, t)}{\partial x^{2}}+\frac{\partial^{2}u(\mathbf{x},t)}{\partial y^{2}}+\frac{\partial^{2}u(\mathbf{x},t)}{\partial z^{2}}=\frac{1}{c^{2}}\frac{\partial^{2}u(\mathbf{x},t)}{\partial t^{2}}
 $$
 
-\note{The largest order of derivative defines the order of the DE. An ODE is lineal for $F(t,y,y',\dots,y(n))=0$}
+\vspace{1ex}\note{The largest order of derivative defines the order of the DE. An ODE is lineal for $F(t,y,y',\dots,y(n))=0$}\vspace{1ex}
 
 An ODE can be solved with a general ($=\dots+C$) or particular ($=\dots+k,\,k=\mathbb{R}$). The result can be given by an Initial Value Problem (IVP): a function $f(t)$ verifying the ODE and the Initial Condition (IC).
 
-\note{Frontier problems are an IVP but verifying an IC relative to the contour, a Contour Condition (CC)}
+\vspace{1ex}\note{Frontier problems are an IVP but verifying an IC relative to the contour, a Contour Condition (CC)}\vspace{1ex}
 
 \section{First Order Differential Equations}
 
@@ -50,7 +50,7 @@ $$
 A(t)dt=B(y)dy,\hspace{4ex}y'=\frac{A(t)}{B(y)},\hspace{4ex}y'=C(t)D(y)
 $$
 
-\textit{\textbf{Prob.:}} A bowl filled with water spins at a $w$ velocity. If we put a mass $m$ on the surface of the water and denote tension force by $T$, centrifugal force by $F_{c}$ and weight by $P$. Formulate Newton's Equation.
+\vspace{2ex}\textit{\textbf{Prob.:}} A bowl filled with water spins at a $w$ velocity. If we put a mass $m$ on the surface of the water and denote tension force by $T$, centrifugal force by $F_{c}$ and weight by $P$. Formulate Newton's Equation.
 
 \begin{align}
 F&=ma, & v&=cte\implies a=0 \\
@@ -87,13 +87,13 @@ $$
 
 \subsection{Homogeneous ODE}
 
-\note{A function $f(x,y)$ is said to be of order $n$ if $f(\lambda x,\lambda y)=\lambda^nf(x,y)$}
+\vspace{1ex}\note{A function $f(x,y)$ is said to be of order $n$ if $f(\lambda x,\lambda y)=\lambda^nf(x,y)$}\vspace{1ex}
 
 A first-order ODE $M(x,y)dx+N(x,y)dy=0$ is homogeneous if and only if $M$ and $N$ are of the same order.
 
-\note{Given a homogeneous ODE $dy / dt=f(t,y)$, it can be solved by making the change $u=y / t$ converting the equation into a separable variables equation}
+\vspace{1ex}\note{Given a homogeneous ODE $dy / dt=f(t,y)$, it can be solved by making the change $u=y / t$ converting the equation into a separable variables equation}\vspace{1ex}
 
-\textit{\textbf{Ex.:}} $t^{3}y'=t^{2}y-2y^{3}$
+\vspace{2ex}\textit{\textbf{Ex.:}} $t^{3}y'=t^{2}y-2y^{3}$
 \begin{align} 
 y'=\frac{t^{2}y-2y^{3}}{t^{3}}&=\frac{y}{t}-2\left( \frac{y}{t} \right)^{3} \\
 u&=y / t \\
@@ -103,7 +103,7 @@ y'=\frac{dy}{dt}&=\frac{d(ut)}{dt}=\frac{du}{dt}t+u \\
 \frac{du}{2u^{3}}&=-\frac{dt}{t}
 \end{align}
 
-\textit{\textbf{Prob.:}} Find the form of a curved mirror that divides a beam of light parallel to the $X$ axis.
+\vspace{2ex}\textit{\textbf{Prob.:}} Find the form of a curved mirror that divides a beam of light parallel to the $X$ axis.
 
 The beams will be reflected towards a point we will be calling $F$ (property of a parabolic antenna).
 
@@ -135,7 +135,7 @@ $$
 \boxed{\frac{du}{\sqrt{ 1+u^{2} }}=\frac{dx}{x} \implies F(y / x)=\log x+C}
 $$
 
-\textit{\textbf{Ex.:}} Solve for $y'=(2y-t+1) / (t+y+3)$
+\vspace{2ex}\textit{\textbf{Ex.:}} Solve for $y'=(2y-t+1) / (t+y+3)$
 \begin{align}
 f(\lambda y,\lambda t)&=\frac{2\lambda y-\lambda t+1}{\lambda y+\lambda t+3}, & &\leftarrow\text{not homogeneous}
 \end{align}
@@ -161,9 +161,9 @@ $$
 \boxed{\frac{dY}{dT}=\frac{2Y-T}{Y+T}}\hspace{4ex}\leftarrow\text{homogeneous}
 $$
 
-\textit{\textbf{Prob.:}} Solve the equation above \textbf{TODO}
+\vspace{2ex}\textit{\textbf{Prob.:}} Solve the equation above \textbf{TODO}
 
-\textit{\textbf{Ex.:}} Solve for $y'=(2y-t+1) / (y+t+3)$
+\vspace{2ex}\textit{\textbf{Ex.:}} Solve for $y'=(2y-t+1) / (y+t+3)$
 \begin{align}
 f(\lambda y,\lambda t)&=\frac{2\lambda y-\lambda t+1}{\lambda y+\lambda t+3}\hspace{4ex}\leftarrow\text{not homogeneous} \\
 y'=\frac{dy}{dt}&=\left\langle\begin{cases}
@@ -176,7 +176,7 @@ As the functions are parallel, the previous method will not work, but we can mak
 $$
 \boxed{\frac{du-3\,dt}{dt}=\frac{2u-1}{3u}}
 $$
-Prob.: Solve the above equation
+\vspace{2ex}\textit{\textbf{Prob.:}} Solve the above equation
 
 \subsection{Exact DEs}
 An $M(t,y)dt+N(t,y)dy=0$ DOE is \textit{exact} if its \textit{potential function} $F(t,y)$ exists as
@@ -192,7 +192,7 @@ To prove this on any equation of this style
 $$
 \frac{\partial M}{\partial y}=\frac{\partial N}{\partial t}
 $$
-\textbf{\textit{Ex.: }}Solve $(2ty+3t^{2}y^{2}+1)dt+(t^{2}+2t^{3}y+2y)dy=0$ 
+\vspace{2ex}\textbf{\textit{Ex.: }}Solve $(2ty+3t^{2}y^{2}+1)dt+(t^{2}+2t^{3}y+2y)dy=0$ 
 $\triangleright$ Define $M(y,t)=2ty+3t^{2}y^{2}+1$ and $N(y,t)=t^{2}+2t^{3}+2y$ and observe
 $$
 \partial_{t}F=2t+6t^{2}y=\partial_{y}N\hspace{4ex}\leftarrow\text{Exact DOE}
@@ -219,7 +219,7 @@ F(y,t)=yt^{2}+t^{3}y^{2}+t+y^{2}+C=K'
 $$
 \boxed{K=yt^{2}+t^{3}y^{2}+t+y^{2}}
 $$
-\textbf{\textit{Prob.: }}Solve (using $N$) $(3y+2)dt+(8t+8y)dy=0$
+\vspace{2ex}\textbf{\textit{Prob.: }}Solve (using $N$) $(3y+2)dt+(8t+8y)dy=0$
 $\triangleright$ $M(y,t)$ and $N(y,t)$ already defined, find $F(y,t)$ 
 \begin{align}
 \text{Exact DOE}\implies \partial_{y}F(y,t)&=N(y,t) \\
@@ -255,9 +255,9 @@ then the expression can be integrated
 $$
 \boxed{y=\frac{1}{\mu}\int \mu q \, dt\, }
 $$
-\note{$\mu$ is a function of $t$ and can not be moved in or out of the integral}
+\vspace{1ex}\note{$\mu$ is a function of $t$ and can not be moved in or out of the integral}\vspace{1ex}
 
-\textbf{\textit{Ex.: }}Solve $y'+2y=e^{t}$
+\vspace{2ex}\textbf{\textit{Ex.: }}Solve $y'+2y=e^{t}$
 $\triangleright$ Determine linearity and define $p(t)$ and $q(t)$
 $$
 \text{Linear}\implies p(t)=2,\hspace{4ex}q(t)=e^{ t }
@@ -283,7 +283,7 @@ $$
 \boxed{y=\frac{e^{ t }}{3}+C\,e^{ -2t }}
 $$
 
-\textbf{\textit{Prob.: }}Solve $(y+x^{2}\cos x)dx-xdy=0$ 
+\vspace{2ex}\textbf{\textit{Prob.: }}Solve $(y+x^{2}\cos x)dx-xdy=0$ 
 $\triangleright$ Define $M(x,y)=y+x^{2}\cos x$ and $N(x,y)=-x$
 $$
 D_{y}M(x,y)=1,\hspace{4ex}D_{x}N(x,y)=-1 \hspace{4ex}\leftarrow\text{Not exact DOE}
@@ -327,7 +327,7 @@ A curve from a Curve Family with an orthogonal intersection with each of the oth
 
 
 
-\textbf{\textit{Ex.: }}Circumference contour
+\vspace{2ex}\textbf{\textit{Ex.: }}Circumference contour
 $$
 x^{2}+y^{2}=R^{2}
 $$
@@ -339,7 +339,7 @@ D_{x}F(x,y,K)&=2x+2yy'
 $$
 \boxed{x+yy'=0}
 $$
-\note{The orthogonal family follows $y'=\frac{y}{x}$}
+\vspace{1ex}\note{The orthogonal family follows $y'=\frac{y}{x}$}\vspace{1ex}
 
 \begin{align}
 y'=\frac{y}{x}&=\int \frac{1}{y} \, dy\, =\int \frac{1}{x} \, dx\,  \\
@@ -350,5 +350,7 @@ $$
 \boxed{y=xe^{ C }}\hspace{4ex}\leftarrow\text{y=Kx}
 $$
 
+\subsection{Polar Coordinates}
+\textit{\textbf{TODO}}
 
 \end{document}
