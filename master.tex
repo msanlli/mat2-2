@@ -252,7 +252,91 @@ $$
 
 \subsection{Integral Factor}
 \setcounter{equation}{0}
-\textbf{\textit{Read Integral Factor (point 5)}}
+
+An integral factor is a $\mu = \mu(t,y)$ function such that 
+$$
+\mu Mdt+\mu Ndy=0
+$$
+making the original $Mdt+Ndy=0$ solvable.
+
+These functions are difficult to find and only two will be showed in this class.
+
+\subsubsection{First type}
+
+For $\mu = \mu(t)$
+\begin{align}
+    \partial_y(\mu M)&=\partial_t(\mu N) \\
+    \partial_t(\mu N)&=D_t(\mu) N+\mu \partial_tN \\
+    \mu \partial_yM&=D_t(\mu)N+\mu \partial_tN \\
+    \mu\left(\partial_yM-\partial_tN\right)&=D_t(\mu)N \\
+    \frac{1}{N}\left(\partial_yM-\partial_tN\right)dt&=D_\mu \mu
+\end{align}
+
+\stepcounter{ex}\vspace{2ex}\textit{\textbf{Ex.\thesection.\theprob:}} $(t+y)dy-ydt=0$
+\begin{align}
+    \partial_yM&=-1 \\
+    \partial_tN&=1 \\
+    \partial_yM&\neq \partial_tN \\
+    \frac{1}{N}\left(\partial_yM-\partial_tN\right)dt&=D_\mu\mu \\
+    \frac{-2}{t+y}dt&=D_\mu\mu \leftarrow\text{Dependant on }t,y
+\end{align}
+As the left side is not only dependant on $t$, the $\mu$ function can not exist.
+
+\stepcounter{ex}\vspace{2ex}\textit{\textbf{Ex.\thesection.\theprob:}} $(1-y)dt+(1+t)dy=0,\,y(0)=0$
+\begin{align}
+    \frac{1}{N}\left(\partial_yM-\partial_tN\right)dt&=D_\mu\mu \\
+    \frac{-2}{1+t}dt&=D_\mu\mu \\
+    -2\int\frac{1}{1+t}\,dt&=\int\frac{1}{\mu}\,d\mu \\
+    \log \mu&=-2\log (1+t) \\
+    \mu(t)&=(1+t)^{-2}
+\end{align}
+now we multiply the original expression with the $\mu$ we found
+\begin{align}
+    \frac{1-y}{(1+2)^2}dt+\frac{1+t}{(1+t)^2}dy=0
+\end{align}
+there exists a function $F(t,y)$ such that
+\begin{align}
+    \partial_tF=\frac{1-y}{(1+t)^2},\hspace{4ex}\partial_y\frac{1}{1+t}
+\end{align}
+the first function depends on two variables, so the second will be used now
+\begin{align}
+    F(t,y)&=\int \frac{1}{1+t}dy=\frac{y}{1+t}+g(t)\\ 
+    \partial_tF&=\frac{-y}{(1+t)^2}+D_tg=\frac{1-y}{(1+t)^2}\implies g(t)=-\frac{1}{1+t}+C \\
+    F(t,y)&=\frac{y}{1+t}-\frac{1}{1+t}+C \\
+    K&=\frac{y}{1+t}-\frac{1}{1+t}=0 \\
+    0&=\frac{y}{1+t}-\frac{1}{1+t}
+\end{align}
+$$
+\boxed{y=1}
+$$
+
+\subsubsection{Second type}
+
+For $\mu=\mu(y)$, doing the inverse path for the \textit{First Type}
+\begin{align}
+    \frac{1}{M}\left(\partial_tN-\partial_yM\right)dy&=D_\mu\mu
+\end{align}
+
+\stepcounter{ex}\vspace{2ex}\textit{\textbf{Ex.\thesection.\theprob:}} $(y+t^2)dy=2ydt$
+If we try solving via the \textit{First Type}
+\begin{align}
+    \frac{1}{N}\left(\partial_yM-\partial_tN\right)dt&=D_\mu\mu \\
+    \frac{-4t}{y+t^2}dt&=D_\mu\mu \leftarrow\text{Dependant on }t,y
+\end{align}
+as the left side is dependant on multiple variables $\mu$ can not exist, but if we use the \textit{Second Type} way
+\begin{align}
+    \frac{1}{M}\left(\patchcmd_tN-\partial_yM\right)dy&=D_\mu\mu \\
+    \frac{-2}{y}dy&=D_\mu\mu 
+\end{align}
+this way $\mu$ exists
+\begin{align}
+    \log\mu &= -2\log y \\
+    \mu &=y^{-2} \\
+    \frac{2t}{y}dt-\frac{y+t^2}{y^2}dy&=0
+\end{align}
+$$
+\boxed{\mu(y)=1/y^2}
+$$
 
 \subsection{Lineal Equations}
 \setcounter{equation}{0}
@@ -274,6 +358,7 @@ $$
 \vspace{1ex}\note{$\mu$ is a function of $t$ and can not be moved in or out of the integral}\vspace{1ex}
 
 \stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}Solve $y'+2y=e^{t}$
+
 $\triangleright$ Determine linearity and define $p(t)$ and $q(t)$
 $$
 \text{Linear}\implies p(t)=2,\hspace{4ex}q(t)=e^{ t }
@@ -373,5 +458,321 @@ e^{ \ln y }&=e^{ \ln x+C }
 $$
 \boxed{y=xe^{ C }}\hspace{4ex}\leftarrow\text{y=Kx}
 $$
+
+\subsubsection{Orthogonal Trajectories With Polar Coordinates}
+Polar coordinates describe curves differently to Cartesian coordinates
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c}
+        & Cartesian & Polar \\ \hline
+        Origin-centred circumferences & $x^2+y^2=C^2$ & $\rho=C$ \\ \hline
+        Semi-line through the origin & $y=kx$ & $\theta=C$ \\ \hline
+        Lines parallel to the $X$ axis & $y=k$ & $\rho\sin\theta=k$
+    \end{tabular}
+    \caption{Cartesian vs. Polar}
+    \label{tab:polars}
+\end{table}
+
+\section{Superior Order ODEs}
+\setcounter{equation}{0}
+\subsection{Constant coefficient ODEs}
+\setcounter{equation}{0}
+$a_{n}(t)D_{t}^{n}y+a_{n-1}D_{t}^{n-1}y+\dots+a_{1}D_{t}y=b(t)$ is the form of an ODE of order $>1$, it always has a solution for $b(t)=0$: $a_{n}(t)D_{t}^{n}y+a_{n-1}D_{t}^{n-1}y+\dots+a_{1}D_{t}y=\boxed{0}$ .
+
+In order to solve one, the solution of the homogeneous and one of the particulars
+$$
+\sum^{n}_{k=0}a_{k}(y_{h}+y_{p})=0+b(t)=b(t)
+$$
+\vspace{1ex}\note{Note that the sum of only one of the homogeneous solutions with the homogeneous will be the general solution}\vspace{1ex}
+
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}$a_{1}y'+a_{0}y=0$
+\begin{align}
+\frac{y'}{y}&=- \frac{a_{0}}{a_{1}} \\
+\int \frac{y'}{y} \, dt\, &=-\int \frac{a_{0}}{a_{1}} \, dt\,  \\
+\ln y &= -\frac{a_{0}}{a_{1}}t+C \\
+y(t)&=Ke^{ -\frac{a_{0}}{a_{1}}t }
+\end{align}
+
+And using $\mu$
+\begin{align}
+y'+p(t)&=q(t) \leftarrow\text{Desired form} \\
+\implies a_{1}y'+a_{0}y=0 &\implies y'+\frac{a_{0}}{a_{1}}y=0 \\
+\mu=e^{ \int p(t) \, dt\,  }&=e^{ \frac{a_{0}}{a_{1}}t } \\
+\end{align}
+now applying $\mu y'+\mu \frac{a_{0}}{a_{1}}y=0$
+\begin{align}
+e^{ \frac{a_{0}}{a_{1}}t }y'+e^{ \frac{a_{0}}{a_{1}}t } \frac{a_{0}}{a_{1}}y &= D_{t}\left( e^{ \frac{a_{0}}{a_{1}} }y \right)=0 \\
+y(t)&=Ke^{ - \frac{a_{0}}{a_{1}}t }
+\end{align}
+$$
+\boxed{y(t)=Ke^{ -\frac{a_{0}}{a_{1}}t }}
+$$
+To find the characteristic polynomial
+$$
+a_{n}\lambda^{n}+a_{n-1}\lambda^{n-1}+\dots a_{0}=0\implies \lambda_{1},\lambda_{2},\lambda_{3},\dots
+$$
+
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}
+
+$\triangleright\, 3y'''-2y'=0$
+\begin{align}
+3\lambda^{3}e^{ \lambda t }-2\lambda e^{ \lambda t }&=0 \\
+3\lambda^{3}-2\lambda&=0 \\
+\end{align}
+$$
+\boxed{3\lambda^{3}-2\lambda=0}
+$$
+
+$\triangleright\,y''-3y'+2y=0$
+\begin{align} 
+\lambda^{2}-3\lambda+2&=0 \\
+\lambda=\frac{3\pm \sqrt{ 9-8 }}{2} &=\frac{3\pm1}{2}\begin{cases}
+\lambda_{1}=2 \\
+\lambda_{2}=1
+\end{cases} \\
+y_{h}(t)=C_{1}y_{1}+C_{2}y_{2}&=C_{1}e^{ 2t }+C_{2}e^{ t }
+\end{align}
+$$
+\boxed{y_{h}(t)=C_{1}e^{ 2t }+C_{2}e^{ t }}
+$$
+
+\stepcounter{prob}\vspace{2ex}\textbf{\textit{Prob.\thesection.\theprob: }}
+
+$\triangleright\, y''+y'=0,\,y(0)=1,\,y'(0)=0$
+
+The ODE is homogeneous and has constant coefficients $\to e^{ \lambda t }$
+\begin{align}
+\lambda^{2}+\lambda&=0 \\
+\lambda(\lambda+1)&=0\begin{cases}
+\lambda_{1}=0 \\
+\lambda_{2}=-1
+\end{cases} \\
+\begin{cases}
+y_{1}(t)&=e^{ 0t }=1 \\
+y_{2}(t)&=e^{ -t } 
+\end{cases}&\implies \begin{cases}
+y_{1}(0)=C_{1}+C_{2}=1 \\
+y'(0)=-C_{2}=0
+\end{cases}
+\end{align}
+$\triangleright\, y'''-5y''+6y'=0$
+
+Homogeneous with constant coefficients $\to e^{ \lambda t }$
+\begin{align}
+\lambda^{3}-5\lambda^{2}+6\lambda&=0 \\
+\lambda(\lambda^{2}-5\lambda+6)&=0 \\
+\lambda=\frac{5\pm \sqrt{ 25-24 }}{2}&=\frac{5\pm1}{2}\begin{cases}
+\lambda=3 \\
+\lambda=2
+\end{cases} \\
+y_{h}(t)=C_{1}&+C_{2}e^{ 3t }+C_{3}e^{ 2t }
+\end{align}
+$$
+\boxed{y_{h}(t)=C_{1}+C_{2}e^{ 3t }+C_{3}e^{ 2t }}
+$$
+
+$\triangleright\, y'''+3y''=4y$
+
+\begin{align}
+y'''+3y''-4y&=0 \\
+\lambda^{3}+3\lambda^{2}-4&=0 \\
+\text{Rufini}\to &\begin{cases}
+\lambda=1 & \text{Simple} \\
+\lambda=-2 & \text{Double}
+\end{cases} \\
+y(t)=C_{1}e^{ t }+&C_{2}e^{ -2t }+C_{3}te^{ -2t }
+\end{align}
+$$
+\boxed{y(t)=C_{1}e^{ t }+C_{2}e^{ -2t }+C_{3}te^{ -2t }}
+$$
+\subsubsection{Complex arrays}
+\setcounter{equation}{0}
+
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}$y''+2y'+2y=0$
+
+\begin{align}
+\lambda^{2}+2\lambda+2&=0 \\
+\lambda=\frac{-2\pm \sqrt{ -4 }}{2}&=-1\pm i \begin{cases}
+\lambda=-1+i \\
+\lambda=-1-i
+\end{cases}
+\end{align}
+$$
+y_{1}(t)=e^{ (-1+i)t }
+$$
+In this case \textit{Euler's Formula} can be applied
+$$
+\text{Euler's Formula }\to e^{\alpha t}=\cos(\alpha)+i\sin(\alpha) 
+$$
+\begin{align}
+\text{Euler's Formula }\to y_{1} (t)&=e^{ -t }(\cos t+i\sin t)= \\
+&=\overbrace{e^{ -t }\cos t}^{\text{Real}}+\overbrace{i\,e^{ -t}\sin t}^{\text{Im}}
+\end{align}
+\begin{align}
+y_{1}(t)&=C_{1}e^{ (-1+i)t }+C_{2}e^{ (-1-i )t}= \\
+&=C_{1}e^{ -t }\cos t+iC_{1}e^{ -t }\sin t+C_{2}e^{ -t }\cos t-iC_{2}e^{ -t }\sin t= \\
+&=(C_{1}+C_{2})e^{ -t }\cos t+i(C_{1}-C_{2})e^{ -t }\sin t
+\end{align}
+
+\textbf{\textit{Ex. Page 17}}
+
+\setcounter{equation}{0}
+\stepcounter{prob}\vspace{2ex}\textbf{\textit{Prob.\thesection.\theprob: }}$y''+ay=0,\,y(1)=y(0)=0$
+\begin{align}
+&\lambda^{2}+a=0 \\
+&\lambda=\pm \sqrt{ -a }\begin{cases}
+a=0,&\lambda=0\,\leftarrow\text{(Double)} \\
+a>0,&\lambda=\pm\sqrt{ |a| } \\
+a<0,&\lambda=\pm\sqrt{ |a| }
+\end{cases} \\
+&\begin{cases}
+\lambda=0\implies e^{ 0t },\,te^{ 0t } & \begin{cases}
+y(0)=C_{1}=0 \to \boxed{\text{null}}\\
+y(1)=C_{1}+C_{2}t=0+C_{2}=0 \to \boxed{\text{null}}
+\end{cases} \\
+\lambda=\sqrt{ |a| }\implies C_{1}e^{ -\sqrt{ |a| } }+C_{2}e^{ +\sqrt{ |a| } } & \begin{cases}
+y(0)=C_{1}+C_{2}=0 \to \boxed{\text{null}}\\
+y(1)=C_{1}e^{ -\sqrt{ |a| } }+C_{2}e^{ +\sqrt{ |a| } } \implies\dots
+\end{cases}
+\end{cases}
+\end{align}
+\begin{align}
+\dots y(1)&=0=C_{1}\cos \sqrt{ |a| }+C_{2}\sin \sqrt{ |a| }=C_{2}\sin\left(\sqrt{ |a| }\right)=0 \\
+\sqrt{ |a| }&=n\pi \iff y(t)=C_{2}\sin\left( n\pi t\right)
+\end{align}
+$$
+\boxed{\sqrt{ |a| }=n\pi,\,y(t)=C_{2}\sin(n\pi t)}
+$$
+
+\stepcounter{prob}\vspace{2ex}\textbf{\textit{Prob.\thesection.\theprob: }}$y^{(4)}+2y''+y=0$
+\begin{align}
+\lambda^{4}+2\lambda^{2}+1&=0 \\
+\langle \mu=\lambda^{2} \rangle \to \mu^{2}+2\mu+1&=0 \\
+\mu=\frac{-2\pm \sqrt{ 4-4 }}{2}&=-1\leftarrow\text{(Double)} \\
+\langle \mu=-1\text{ (Double)} \rangle \to \lambda=\pm \sqrt{ -1 }&=\pm i\begin{cases}
+\lambda=+i\text{ (Double)},&e^{ it },te^{ it } \implies\dots\\
+\lambda=-i\text{ (Double)},&e^{ -it },te^{ -it }
+\end{cases} \\
+\dots \begin{cases}
+e^{ it }=\cos t+i\sin t \\
+te^{ it }=t\cos t+it\sin t
+\end{cases}\implies y(t)&=C_{1}\cos t+C_{2}\sin t+C_{3}\cos t+C_{4}\sin t
+\end{align}
+$$
+\boxed{y(t)=C_{1}\cos t+C_{2}\sin t+C_{3}\cos t+C_{4}\sin t}
+$$
+
+\stepcounter{prob}\vspace{2ex}\textbf{\textit{Prob.\thesection.\theprob: }}$y'''-y''+y'-y=0$ 
+\begin{align}
+\lambda^{3}-\lambda^{2}+\lambda-1&=0 \\
+\text{Rufini}\to \lambda=\pm1&=(\lambda-1)(\lambda^{2}+1)
+\begin{cases}
+\lambda=1,&e^{ t }  \\
+\lambda=i,&e^{ it } \implies \dots \\
+\lambda=-i,&e^{ -it }
+\end{cases} \\
+\dots e^{ it }=\cos t + i\sin t&\implies y(t)=C_{1}e^{ t }+C_{2}\cos t+C_{3}\sin t
+\end{align}
+$$
+\boxed{y(t)=C_{1}e^{ t }+C_{2}\cos t+C_{3}\sin t}
+$$
+\subsection{Non-homogeneous ODEs With Constant Coefficients}
+\setcounter{equation}{0}
+
+Now, for a non-homogeneous ODE, only one particular solution is needed so it can be added to the homogeneous solution to get the general solution.
+
+\subsubsection{Undetermined Coefficients Method}
+\setcounter{equation}{0}
+Given a non-homogeneous ODE like
+$$
+a_{n}y^{(n)}+a_{n-1}y^{(n-1)}+\dots+a_{0}y=b(t)
+$$
+first, we classify $b(t)$
+
+$\triangleright$ \textbf{\textit{First case:}} If the arrays include $0$ as a $k$ order solution, then the particular solution is
+$$
+y_{p}=t^{k}(A_{0}+A_{1}t+\dots+A_{m}t^{m})
+$$
+
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}$y''+y=t,\,y(0)=1,\,y'(0)=2$
+$$
+y(t)=y_{p}(t)+y_{h}(t)
+$$
+\begin{align}
+y''+y&=0 \\
+\lambda^{2}+1&=0 \\
+\lambda&=\pm i\implies e^{ it },e^{ -it } \\
+y_{h}(t)&=C_{1}\cos t+C_{2}\sin t \\
+\end{align}
+$$
+b(t)=t,\hspace{4ex}m=1,\hspace{4ex}k=0
+$$
+\begin{align}
+\begin{cases}
+y_{p}(t)&=t^{0}(A_{0}+A_{1}t)=A_{0}+A_{1}t \\
+y_{p}'(t)&=A_{1} \\
+y_{p}''(t)&=0
+\end{cases}\implies 0+A_{0}+A_{1}t&=t \\
+y_{p}(t)&=t
+\end{align}
+\begin{align}
+y(t)&=C\cos t+i\sin t+t \\
+y(0)&=1 & C_{1}=1\\
+y'(0)&=2 & y'(0)=2=C_{2}+1\implies C_{2}=1\\
+y'(t)&=-C_{1}\sin t+C_{2}\cos t+1
+\end{align}
+
+\stepcounter{prob}\vspace{2ex}\textbf{\textit{Prob.\thesection.\theprob: }}$y''+y'=t^{2}+1$
+
+$$
+y(t)=y_{p}(t)+y_{h}(t)
+$$
+\begin{align}
+\lambda^{2}+\lambda&=0 \\
+\lambda+1&=0\begin{cases}
+\lambda=0,&e^{ 0t } \\
+\lambda=-1,&e^{ -t }
+\end{cases} \\
+y_{h}(t)&=C_{1}e^{ 0t }+C_{2}e^{ -t } \\
+y_{h}&=C_{1}+C_{2}e^{ -t }
+\end{align}
+$$
+b(t)=t^{2}+1,\hspace{4ex}m=2,\hspace{4ex}k=1
+$$
+\begin{align}
+&\begin{cases}
+y_{p}(t)=t^{2}(A_{0}+A_{1}t+A_{2}t^{2}) \\
+y_{p}'(t)=(A_{0}+A_{1}t+A_{2}t^{2})+t(A_{1}+2A_{2}t)\\
+y_{p}''(t)=A_{1}+2A_{2}t+A_{1}+4A_{2}t
+\end{cases}\implies y'+y''=b(t)\dots \\
+\dots& \overbrace{A_{0}+2A_{1}t+3A_{2}t^{2}}^{y'}+\overbrace{2A_{1}+6A_{2}t}^{y''}=\overbrace{t^{2}+1}^{b(t)} \\
+&3A_{2}t^{2}+(2A_{1}+6A_{2})t+4A_{1}+A_{0}=t^{2}+1
+\end{align}
+\begin{align}
+\begin{cases}
+3A_{2}=1&A_{2}=\frac{1}{3} \\
+2A_{1}+6A_{2}=0 & A_{1}=-1 \\
+2A_{1}+A_{0}=1 & A_{0}=1-2A_{1}=3
+\end{cases}
+\end{align}
+$$
+\boxed{y_{p}(t)=3t^{2}-t^{3}+\frac{t^{4}}{3}}
+$$
+
+$\triangleright$ \textbf{\textit{Second case:}} For the solution $\neq 0$,
+$$
+y_{p}(t)=At^{k}e^{ \alpha t }
+$$
+
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}$y''+y=e^{ 2t }$
+\begin{align}
+y_{h}(t)&=C_{1}\cos t+C_{2}\sin t
+\end{align}
+$$
+b(t)=e^{ 2t },\hspace{4ex}k=1,\hspace{4ex}\alpha=2
+$$
+\begin{align}
+\lambda^{2}+1&=0\implies \lambda=\pm i
+\end{align}
 
 \end{document}
