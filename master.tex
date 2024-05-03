@@ -775,4 +775,85 @@ $$
 \lambda^{2}+1&=0\implies \lambda=\pm i
 \end{align}
 
+\setcounter{equation}{0}
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}$y''+y=e^{ 2t }$
+\begin{align}
+y_{h}(t)&=C_{1}\cos t+C_{2}\sin t
+\end{align}
+$$
+b(t)=e^{ 2t },\hspace{4ex}k=1,\hspace{4ex}\alpha=2
+$$
+\begin{align}
+\lambda^{2}+1&=0\implies \lambda=\pm i\begin{cases}
+e^{ +i } \\
+e^{ -i }
+\end{cases}  & &\leftarrow \alpha\text{ not a sol.}\implies k=0 \\
+y_{p}&=At^0e^{ \alpha t }=e^{ 2t } \\
+e^{ 2t }&=(Ae^{ 2t })''+Ae^{ 2t } \\
+e^{ 2t }&=4Ae^{ 2t }+Ae^{ 2t } \\
+A&=1 / 5
+\end{align}
+$$
+\boxed{y_{p}=\frac{1}{5}e^{ 2t }}
+$$
+
+\stepcounter{prob}\vspace{2ex}\textbf{\textit{Prob.\thesection.\theprob: }}$y''-y'=e^{ t }$
+$$
+b(t)=e^{ t },\hspace{4ex}k=1,\hspace{4ex}\alpha=1 \to \text{Ind. Coef.}
+$$
+\begin{align}
+\lambda^{2}-\lambda&=0\implies \lambda=\begin{cases}
+0 \\
+1
+\end{cases} & &\leftarrow k=1 \\
+y_{p}(t)&=Ate^{ t }  \\
+y_{p}'(t)&= Ae^{ t }+Ate^{ t }= \\
+&=A(1+t)e^{ t } \\
+y_{p}'' (t)& =Ae^{ t}+A(1+t)e^{ t }= \\
+ & =A(2+t)e^{ t } \\
+e^{ t } & =A(2+t)e^{ t }-A(1+t)e^{ t }= \\
+ & =Ae^{ t } \\
+A & =1 \\
+y_{p}(t) & =te^{ t }
+\end{align}
+$$
+\boxed{y(t)=C_{1}+C_{2}e^{ t }+te^{ t }}
+$$
+
+$\triangleright$ \textbf{\textit{Third case:}} 
+$$
+b(t)=e^{ \alpha t }[K_{C}\cos(\beta t)+K_{S}\sin(\beta t)]
+$$
+with a particular solution
+$$
+y_{p}(t)=t^{k}e^{ \alpha t }[A\sin(\beta t)+B\cos(\beta t)]
+$$
+
+\stepcounter{ex}\vspace{2ex}\textbf{\textit{Ex.\thesection.\theex: }}$y''+y=\cos t$
+\begin{align}
+\lambda^{2}+1&=0\implies \lambda=\pm \begin{cases}
+e^{ +it } \\
+e^{ -it }
+\end{cases} \\
+y_{h}(t)&=C_{1}\cos t+C_{2}\sin t \\
+\end{align}
+$$
+b(t)=\cos t,\hspace{4ex}\alpha=0,\hspace{4ex}\beta=1,\hspace{4ex}K_{S}=0,\hspace{4ex}K_{C}=1
+$$
+\begin{align}
+y_{p}(t)&=t(A\sin t+B\cos t) \\
+y_{p}'(t)&=A\sin t+B\cos t+t(A\sin t+B\cos t) \\
+y_{p}''(t)&=2A\cos t-2B\sin t-t(A\sin t+B\cos t) \\
+b(t)=\cos t&=2A\cos t-2B\sin t-t(A\sin t+B\cos t)+t(A\sin t+B\cos t)= \\
+&=2A\cos t-2B\sin t\implies \begin{cases}
+2A=1  & A=1 / 2\\
+-2B=0 & B=0
+\end{cases}
+\end{align}
+$$
+\boxed{y_{p}(t)=\frac{1}{2}t\sin t}
+$$
+
+\textbf{\textit{EX. P.28}}
+
 \end{document}
